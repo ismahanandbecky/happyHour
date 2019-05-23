@@ -1,0 +1,153 @@
+@import "_partials/_setup.scss";
+
+
+body {
+    background: tomato;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 20px;
+}
+
+img {
+    width: 100%;
+    max-width: 800px;
+}
+
+header,
+.questionPage,
+.resultPage {
+    height: 100vh;
+}
+
+button {
+    background: orangered;
+    color: white;
+    border: none;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+//FIRST PAGE
+
+header { 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    width: 70%;
+    height: 80vh;
+    background: lightsalmon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    h1 {
+        margin: 0;
+        font-family: 'Francois One', sans-serif;
+        font-size: 200px;
+        line-height: 200px;
+        color: tomato;
+        .a {
+            color: orangered;
+        }
+        .p {
+            color: #ff890c;
+        }
+        .h {
+            color: hotpink;
+        }
+        .r {
+            color: orangered;
+        }
+    }
+    .fiveOClock {
+        color: orangered;
+        margin-top: 30px;
+    }
+    .image1 {
+        position: absolute;
+        width: 300px;
+        right: -110px;
+        bottom: 150px;
+    } 
+}
+
+//SECOND PAGE
+
+.questionPage {
+    border: 2px solid yellow;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+        margin-top: 0;
+        font-family: 'Francois One', sans-serif;
+        font-size: 80px;
+        text-align: center;
+        margin: 50px 0;
+        color: #ffb20c;
+        text-shadow: 7px 7px 0px orangered;
+        .hard {
+            color: lightpink;
+        }
+    }
+    .image2 {
+        width: 200px;
+        margin-bottom: 50px;
+    }
+    .questionSection {
+        width: 80%;
+        height: 300px;
+        background: lightsalmon;
+        display: flex;
+    }
+    .makeMe {
+        margin-bottom: 50px;
+    }
+}
+
+//THIRD PAGE 
+
+.resultPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h3 {
+    font-family: 'Francois One', sans-serif;
+    font-size: 60px;
+    color: #ffb20c;
+    text-shadow: 7px 7px 0px orangered;
+}
+
+.resultContainer {
+    width: 80%;
+    height: 60vh;
+    background: lightsalmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .image3 {
+        width: 300px;
+    }
+    .theDrink {
+        font-family: 'Francois One', sans-serif;
+        font-size: 40px;
+        color: orangered;
+    }
+    .cocktail,
+    .mocktail {
+        color: orangered;
+    }
+}
+
+
+
+
