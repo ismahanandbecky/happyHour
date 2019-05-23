@@ -25,9 +25,20 @@ cocktailApp.chooseDrinks = function (drinksArray) {
     console.log(drinksArray);
 }
 
+// on selection of radio button
+$('.makeMe').on('click', function (event) {
+    event.preventDefault();
+    const userSelection = $('input[name=selection]:checked').val();
+
+    console.log(userSelection)
+})
+
+
+
+
 $(function () {
     cocktailApp.getDrinks(`Alcoholic`);
     // cocktailApp.getDrinks(`Non_Alcoholic`);
    
-})
+});
 
