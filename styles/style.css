@@ -223,7 +223,6 @@ header {
     bottom: 150px; }
 
 .questionPage {
-  border: 2px solid yellow;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -250,10 +249,12 @@ header {
   .questionPage .questionSection {
     width: 80%;
     height: 300px;
-    background: lightsalmon;
+    background: lightsalmon; }
+  .questionPage form {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    text-align: center; }
   .questionPage .makeMe {
     margin-bottom: 50px; }
 
