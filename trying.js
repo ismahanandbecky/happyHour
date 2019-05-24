@@ -14,16 +14,26 @@ cocktailApp.getDrinks = function (userChoice) {
         data: {
             a: userChoice
         }
+    // })
+    //     $.ajax({
+    //         url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?",
+    //         method: 'GET',
+    //         dataType: 'json',
+    //         data: {
+    //             i: userChoice
+    //         }
         // the then function is gathering all the results from our API call. and returning the results as an object called results.
     }).then(function (results) {
         // calling the chooseDrinks function and passing the argument results.drinks
         // cocktailApp.chooseDrinks(results.drinks);
         let randomDrink = cocktailApp.randomDrinkIndex(results.drinks)
-        console.log(randomDrink)
-
+        $('.resultText').html(`<p class="theDrink">${randomDrink.strDrink}</p>`);
     })
 }
 
+// cocktailApp.getIngredients = function (userChoice) {
+    
+// }
 
 cocktailApp.randomDrinkIndex =  function(optionsArray) {
     let randomIndex = Math.floor(Math.random() * optionsArray.length);
@@ -54,6 +64,8 @@ cocktailApp.setUpButtonActions = function(){
         console.log(userSelection)
 
         const alcDrinksArray = cocktailApp.getDrinks(userSelection);
+
+      
     })
 } 
 
