@@ -40,7 +40,7 @@ header {
 
 .title {
     width: 70%;
-    height: 80vh;
+    height: 90vh;
     background: lightsalmon;
     display: flex;
     align-items: center;
@@ -53,6 +53,7 @@ header {
         font-size: 200px;
         line-height: 200px;
         color: tomato;
+        margin-top: 50px;
         .a {
             color: orangered;
         }
@@ -70,12 +71,16 @@ header {
         color: orangered;
         margin-top: 30px;
     }
+    .thirsty {
+        margin-bottom: 30px;
+    }
     .image1 {
         position: absolute;
         width: 300px;
         right: -110px;
         bottom: 150px;
     } 
+    
 }
 
 //SECOND PAGE
@@ -104,14 +109,36 @@ header {
         width: 80%;
         height: 300px;
         background: lightsalmon;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     form{
         display: flex;
         text-align: center;
+        justify-content: center;
+        align-items: center;
     }
     .makeMe {
         margin-bottom: 50px;
     }
+    label {
+        margin-bottom: 20px;
+    }
+    .q1, .q2, .q3, .q4 {
+        margin: 0 25px;
+        display: flex;
+        flex-direction: column-reverse;
+        label {
+            color: orangered;
+        }
+    }
+    .q2, .q4 {
+        label {
+            color: deeppink;
+        }
+    }
+
 }
 
 //THIRD PAGE 
@@ -167,9 +194,11 @@ h3 {
     }
     .ingredientList {
         list-style: none;
+        margin-top: 0;
         
         li {
             color: orangered;
+            font-size: 18px;
         }
     }
     

@@ -183,7 +183,7 @@ header {
 
 .title {
   width: 70%;
-  height: 80vh;
+  height: 90vh;
   background: lightsalmon;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,7 +204,8 @@ header {
     font-family: 'Francois One', sans-serif;
     font-size: 200px;
     line-height: 200px;
-    color: tomato; }
+    color: tomato;
+    margin-top: 50px; }
     .title h1 .a {
       color: orangered; }
     .title h1 .p {
@@ -216,6 +217,8 @@ header {
   .title .fiveOClock {
     color: orangered;
     margin-top: 30px; }
+  .title .thirsty {
+    margin-bottom: 30px; }
   .title .image1 {
     position: absolute;
     width: 300px;
@@ -249,14 +252,44 @@ header {
   .questionPage .questionSection {
     width: 80%;
     height: 300px;
-    background: lightsalmon; }
+    background: lightsalmon;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
   .questionPage form {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    text-align: center; }
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
   .questionPage .makeMe {
     margin-bottom: 50px; }
+  .questionPage label {
+    margin-bottom: 20px; }
+  .questionPage .q1, .questionPage .q2, .questionPage .q3, .questionPage .q4 {
+    margin: 0 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse; }
+    .questionPage .q1 label, .questionPage .q2 label, .questionPage .q3 label, .questionPage .q4 label {
+      color: orangered; }
+  .questionPage .q2 label, .questionPage .q4 label {
+    color: deeppink; }
 
 .resultPage {
   display: -webkit-box;
@@ -320,6 +353,8 @@ h3 {
     max-width: 600px;
     font-size: 18px; }
   .resultText .ingredientList {
-    list-style: none; }
+    list-style: none;
+    margin-top: 0; }
     .resultText .ingredientList li {
-      color: orangered; }
+      color: orangered;
+      font-size: 18px; }
