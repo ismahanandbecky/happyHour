@@ -160,11 +160,12 @@ h3 {
 
 .resultContainer {
     width: 80%;
-    height: 60vh;
+    height: 70vh;
     background: lightsalmon;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
     .image3 {
         width: 300px;
     }
@@ -184,9 +185,6 @@ h3 {
         color: orangered;
         margin-bottom: 0;
     }
-    .resultName, .instructions {
-        padding-left: 45px;
-    }
     .instructions  {
         color: deeppink;
         max-width: 600px;
@@ -195,6 +193,7 @@ h3 {
     .ingredientList {
         list-style: none;
         margin-top: 0;
+        padding-left: 0;
         
         li {
             color: orangered;
@@ -204,6 +203,115 @@ h3 {
     
 }
 
+// media queries
+
+@media (max-width: 1190px) {
+    .questionPage .image2 {
+        width: 150px;
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 900px) {
+    .title .image1 {
+        width: 250px;
+    }
+    .title h1 {
+        font-size: 150px;
+        line-height: 150px;
+    }
+    .questionPage h2 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .resultText .instructions {
+        padding-right: 30px;
+    }    
+}
 
 
+@media (max-width: 700px) {
+    .title {
+        height: 80vh;
+    }
+    .title h1{
+    font-size: 125px;
+    line-height: 125px;
+    }
+    .title .image1 {
+        display: none;
+    }
+    .questionPage .q1,
+    .questionPage .q2, 
+    .questionPage .q3, 
+    .questionPage .q4 {
+        margin: 0 15px;
+        font-size: 18px;
+    }
+    h3 {
+        font-size: 40px;
+    }
+    .resultContainer {
+        height: 75vh;
+    }
+    .resultName .theDrink {
+        font-size: 25px;
+    }
 
+    .resultText .instructions {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .questionPage h2 {
+        font-size: 50px;
+    }
+    .questionPage form {
+        flex-direction: column;
+    }
+    .questionPage .image2 {
+        display: none;
+    }
+    .questionPage .questionSection {
+        height: 60vh;
+        width: 70%;
+    }
+    .questionPage .q1,
+    .questionPage .q2, 
+    .questionPage .q3, 
+    .questionPage .q4 {
+        margin-bottom: 25px;
+    }
+    .questionPage .q1 {
+        margin-top: 25px;
+    }
+    .resultText {
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+    .title {
+        width: 80%;
+        height: 70vh;
+    }
+    .title h1 {
+        font-size: 90px;
+        line-height: 90px;
+    }
+    .questionPage h2 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .resultContainer .image3 {
+        display: none;
+    }
+    .resultText {
+        width: 80%;
+        padding-right: 0;
+    }
+    .resultText .instructions {
+        padding-right: 0;
+    }
+}
