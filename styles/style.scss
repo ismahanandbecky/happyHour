@@ -128,6 +128,7 @@ h3 {
     font-size: 60px;
     color: #ffb20c;
     text-shadow: 7px 7px 0px orangered;
+    text-transform: uppercase;
 }
 
 .resultContainer {
@@ -140,21 +141,38 @@ h3 {
     .image3 {
         width: 300px;
     }
-    .theDrink {
-        font-family: 'Francois One', sans-serif;
-        font-size: 40px;
-        color: orangered;
-    }
-    .ingredientList {
-        list-style: none;
-        li {
-            color: orangered;
-        }
-    }
+
     .cocktail,
     .mocktail {
         color: orangered;
     }
+}
+.resultText {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    .theDrink {
+        font-family: 'Francois One', sans-serif;
+        font-size: 40px;
+        color: orangered;
+        margin-bottom: 0;
+    }
+    .resultName, .instructions {
+        padding-left: 45px;
+    }
+    .instructions  {
+        color: deeppink;
+        max-width: 600px;
+        font-size: 18px;
+    }
+    .ingredientList {
+        list-style: none;
+        
+        li {
+            color: orangered;
+        }
+    }
+    
 }
 
 

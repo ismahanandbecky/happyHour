@@ -22,8 +22,8 @@ cocktailApp.getDrinks = function (userChoice) {
         console.log(cocktailApp.randomDrink);
         cocktailApp.drinkID = cocktailApp.randomDrink.idDrink;
         console.log(cocktailApp.drinkID);
-        $('.resultText').html(`<p class="theDrink">${cocktailApp.randomDrink.strDrink}</p>`);
-        
+        $('.resultName').html(`<p class="theDrink">${cocktailApp.randomDrink.strDrink}</p>`);
+
         $.ajax({
             url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
             method: 'GET',
@@ -31,19 +31,15 @@ cocktailApp.getDrinks = function (userChoice) {
             data: {
                 i: cocktailApp.drinkID,
             }
-        }).then(function(results) {
+        }).then(function (results) {
             cocktailApp.drinkData = results.drinks;
             console.log(cocktailApp.drinkData);
-            console.log(cocktailApp.drinkData[0].strIngredient1);
-            console.log(cocktailApp.drinkData[0].strIngredient2);
-            console.log(cocktailApp.drinkData[0].strIngredient3);
-            console.log(cocktailApp.drinkData[0].strIngredient4);
-            console.log(cocktailApp.drinkData[0].strIngredient5);
+            $(`.instructions`).html(`<p>${cocktailApp.drinkData[0].strInstructions}</p>`)
             $('.ingredientList').html(`<li>${cocktailApp.drinkData[0].strIngredient1}</li>`)
-            .append(`<li>${cocktailApp.drinkData[0].strIngredient2}</li>`)
-            .append(`<li>${cocktailApp.drinkData[0].strIngredient3}</li>`)
-            .append(`<li>${cocktailApp.drinkData[0].strIngredient4}</li>`)
-            .append(`<li>${cocktailApp.drinkData[0].strIngredient5}</li>`);
+                .append(`<li>${cocktailApp.drinkData[0].strIngredient2}</li>`)
+                .append(`<li>${cocktailApp.drinkData[0].strIngredient3}</li>`)
+                .append(`<li>${cocktailApp.drinkData[0].strIngredient4}</li>`)
+                .append(`<li>${cocktailApp.drinkData[0].strIngredient5}</li>`);
         });
     });
 }
@@ -70,15 +66,15 @@ cocktailApp.getDrinks = function (userChoice) {
 //make an ajax request using cocktailApp.drinkID
 
 // cocktailApp.getIngredients = function (userChoice) {
-    
+
 // }
 
-cocktailApp.randomDrinkIndex =  function(optionsArray) {
+cocktailApp.randomDrinkIndex = function (optionsArray) {
     let randomIndex = Math.floor(Math.random() * optionsArray.length);
     return optionsArray[randomIndex];
 }
 
-cocktailApp.setUpButtonActions = function(){
+cocktailApp.setUpButtonActions = function () {
     //on click of the thirsty button, do the following
     $('.thirsty').on('click', function (event) {
         event.preventDefault();
@@ -86,7 +82,7 @@ cocktailApp.setUpButtonActions = function(){
         const location = window.location.href.split('#')[0];
         //this is appending the #questionPage id to the url of where we are so that it takes us there
         window.location = `${location}#questionPage`;
-    }) 
+    })
     //on click of the makeMe button do the following:
     $('.makeMe').on('click', function (event) {
         // on click of the button prevent the native behaviour of the browser, to refresh when a button is clicked. 
@@ -103,12 +99,18 @@ cocktailApp.setUpButtonActions = function(){
 
         const alcDrinksArray = cocktailApp.getDrinks(userSelection);
 
+        if (userSelection === `alcoholic`) {
+            $(`.forHeader`).html(`<h3>You deserve a cocktail!</h3>`);
+        } else {
+            $(`.forHeader`).html(`<h3>You get a mocktail.</h3>`);
+        }
+
     })
-} 
+}
 
 
 // defining the init function which will call our methods inside the cocktailApp object and make them run immediately on page load
-cocktailApp.init = function(){
+cocktailApp.init = function () {
     cocktailApp.setUpButtonActions();
 }
 // make sure the document is ready and run the init function
