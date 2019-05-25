@@ -20,22 +20,38 @@ cocktailApp.getDrinks = function (userChoice) {
         // cocktailApp.chooseDrinks(results.drinks);
         cocktailApp.randomDrink = cocktailApp.randomDrinkIndex(results.drinks);
         console.log(cocktailApp.randomDrink);
-        cocktailApp.ID = cocktailApp.randomDrink.idDrink;
-        console.log(cocktailApp.ID)
+        cocktailApp.drinkID = cocktailApp.randomDrink.idDrink;
+        console.log(cocktailApp.drinkID)
         $('.resultText').html(`<p class="theDrink">${cocktailApp.randomDrink.strDrink}</p>`);
+        
+        $.ajax({
+            url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
+            method: 'GET',
+            dataType: 'json',
+            data: {
+                i: cocktailApp.drinkID,
+            }
+        }).then(function(results) {
+            cocktailApp.drinkData = results;
+            console.log(cocktailApp.drinkData);
+        })
     })
 }
 
-$.when(cocktailApp.getDrinks()).then(function () {
-    $.ajax({
-        url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
-        method: 'GET',
-        dataType: 'json',
-        data: {
-            iid: cocktailApp.ID,
-        }
-    });
-});
+// $.when(cocktailApp.getDrinks()).then(function () {
+
+//     $.ajax({
+//         url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
+//         method: 'GET',
+//         dataType: 'json',
+//         data: {
+//             i: cocktailApp.drinkID,
+//         }
+//     }).then(results => {
+//         console.log(results);
+//     })
+
+// });
 
 
 //when we get our chosen drink back, save the ID of that drink cocktailApp.drinkID
@@ -77,9 +93,10 @@ cocktailApp.setUpButtonActions = function(){
 
         const alcDrinksArray = cocktailApp.getDrinks(userSelection);
 
-      
     })
 } 
+
+
 
 // defining the init function which will call our methods inside the cocktailApp object and make them run immediately on page load
 cocktailApp.init = function(){
