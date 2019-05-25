@@ -14,22 +14,34 @@ cocktailApp.getDrinks = function (userChoice) {
         data: {
             a: userChoice
         }
-    // })
-    //     $.ajax({
-    //         url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?",
-    //         method: 'GET',
-    //         dataType: 'json',
-    //         data: {
-    //             i: userChoice
-    //         }
         // the then function is gathering all the results from our API call. and returning the results as an object called results.
     }).then(function (results) {
         // calling the chooseDrinks function and passing the argument results.drinks
         // cocktailApp.chooseDrinks(results.drinks);
-        let randomDrink = cocktailApp.randomDrinkIndex(results.drinks)
-        $('.resultText').html(`<p class="theDrink">${randomDrink.strDrink}</p>`);
+        cocktailApp.randomDrink = cocktailApp.randomDrinkIndex(results.drinks);
+        console.log(cocktailApp.randomDrink);
+        cocktailApp.ID = cocktailApp.randomDrink.idDrink;
+        console.log(cocktailApp.ID)
+        $('.resultText').html(`<p class="theDrink">${cocktailApp.randomDrink.strDrink}</p>`);
     })
 }
+
+$.when(cocktailApp.getDrinks()).then(function () {
+    $.ajax({
+        url: "https://www.thecocktaildb.com/api/json/v1/1/lookup.php",
+        method: 'GET',
+        dataType: 'json',
+        data: {
+            iid: cocktailApp.ID,
+        }
+    });
+});
+
+
+//when we get our chosen drink back, save the ID of that drink cocktailApp.drinkID
+//$.when(cocktailApp.getdrinks).then function () {} pass that fucntion one argument, one argument is cocktailApp.drinkID
+//take that value, put it into the then method, in that then method u have $(ajax) that you will request to the ingredient endpoint
+//make an ajax request using cocktailApp.drinkID
 
 // cocktailApp.getIngredients = function (userChoice) {
     
