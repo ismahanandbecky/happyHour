@@ -145,6 +145,12 @@ h3 {
         font-size: 40px;
         color: orangered;
     }
+    .ingredientList {
+        list-style: none;
+        li {
+            color: orangered;
+        }
+    }
     .cocktail,
     .mocktail {
         color: orangered;

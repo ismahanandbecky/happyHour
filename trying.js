@@ -21,7 +21,7 @@ cocktailApp.getDrinks = function (userChoice) {
         cocktailApp.randomDrink = cocktailApp.randomDrinkIndex(results.drinks);
         console.log(cocktailApp.randomDrink);
         cocktailApp.drinkID = cocktailApp.randomDrink.idDrink;
-        console.log(cocktailApp.drinkID)
+        console.log(cocktailApp.drinkID);
         $('.resultText').html(`<p class="theDrink">${cocktailApp.randomDrink.strDrink}</p>`);
         
         $.ajax({
@@ -32,10 +32,20 @@ cocktailApp.getDrinks = function (userChoice) {
                 i: cocktailApp.drinkID,
             }
         }).then(function(results) {
-            cocktailApp.drinkData = results;
+            cocktailApp.drinkData = results.drinks;
             console.log(cocktailApp.drinkData);
-        })
-    })
+            console.log(cocktailApp.drinkData[0].strIngredient1);
+            console.log(cocktailApp.drinkData[0].strIngredient2);
+            console.log(cocktailApp.drinkData[0].strIngredient3);
+            console.log(cocktailApp.drinkData[0].strIngredient4);
+            console.log(cocktailApp.drinkData[0].strIngredient5);
+            $('.ingredientList').html(`<li>${cocktailApp.drinkData[0].strIngredient1}</li>`)
+            .append(`<li>${cocktailApp.drinkData[0].strIngredient2}</li>`)
+            .append(`<li>${cocktailApp.drinkData[0].strIngredient3}</li>`)
+            .append(`<li>${cocktailApp.drinkData[0].strIngredient4}</li>`)
+            .append(`<li>${cocktailApp.drinkData[0].strIngredient5}</li>`);
+        });
+    });
 }
 
 // $.when(cocktailApp.getDrinks()).then(function () {
@@ -95,7 +105,6 @@ cocktailApp.setUpButtonActions = function(){
 
     })
 } 
-
 
 
 // defining the init function which will call our methods inside the cocktailApp object and make them run immediately on page load

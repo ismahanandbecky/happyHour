@@ -298,6 +298,10 @@ h3 {
     font-family: 'Francois One', sans-serif;
     font-size: 40px;
     color: orangered; }
+  .resultContainer .ingredientList {
+    list-style: none; }
+    .resultContainer .ingredientList li {
+      color: orangered; }
   .resultContainer .cocktail,
   .resultContainer .mocktail {
     color: orangered; }
