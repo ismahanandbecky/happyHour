@@ -349,7 +349,13 @@ header {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
     -ms-flex-direction: column-reverse;
-    flex-direction: column-reverse; }
+    flex-direction: column-reverse;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
     .questionPage .q1 label, .questionPage .q2 label, .questionPage .q3 label, .questionPage .q4 label {
       color: orangered; }
   .questionPage .q2 label, .questionPage .q4 label {
