@@ -25,8 +25,6 @@ button {
     background: orangered;
     color: white;
     border: none;
-    font-family: 'Anonymous Pro', monospace;
-    font-size: 20px;
     padding: 10px;
     margin-top: 30px;
 }
@@ -99,7 +97,6 @@ header {
         right: -110px;
         bottom: 150px;
     } 
-    
 }
 
 //SECOND PAGE
@@ -109,7 +106,6 @@ header {
     align-items: center;
     flex-direction: column;
     h2 {
-        margin-top: 0;
         font-family: 'Francois One', sans-serif;
         font-size: 80px;
         text-align: center;
@@ -124,6 +120,17 @@ header {
         width: 200px;
         margin-bottom: 50px;
     }
+    .warning {
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        color: #ffb20c;
+        padding-bottom: 15px;   
+    }
+    .opacity {
+        opacity: 1;
+    }
     .questionSection {
         width: 80%;
         height: 300px;
@@ -132,7 +139,7 @@ header {
         align-items: center;
         justify-content: center;
     }
-    form{
+    form {
         display: flex;
         text-align: center;
         justify-content: center;
@@ -157,7 +164,6 @@ header {
             color: deeppink;
         }
     }
-
 }
 
 //THIRD PAGE 
@@ -175,6 +181,7 @@ h3 {
     color: #ffb20c;
     text-shadow: 7px 7px 0px orangered;
     text-transform: uppercase;
+    text-align: center;
 }
 
 .resultContainer {
@@ -188,12 +195,8 @@ h3 {
     .image3 {
         width: 300px;
     }
-
-    .cocktail,
-    .mocktail {
-        color: orangered;
-    }
 }
+
 .resultText {
     width: 70%;
     display: flex;
@@ -219,10 +222,15 @@ h3 {
             font-size: 18px;
         }
     }
-    
 }
 
-// media queries
+.tryAgain {
+    margin-bottom: 50px;
+    margin-top: 0px;
+}
+
+
+// MEDIA QUERIES
 
 @media (max-width: 1190px) {
     .questionPage .image2 {
@@ -246,7 +254,6 @@ h3 {
         padding-right: 30px;
     }    
 }
-
 
 @media (max-width: 700px) {
     .title {
@@ -275,11 +282,9 @@ h3 {
     .resultName .theDrink {
         font-size: 25px;
     }
-
     .resultText .instructions {
         font-size: 16px;
     }
-
 }
 
 @media (max-width: 600px) {

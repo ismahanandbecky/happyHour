@@ -18,7 +18,7 @@
             <p class="fiveOClock">It has to be five o' clock somewhere...</p>
             <button class="thirsty">I'm thirsty!</button>
             <div class="image1 wobble-hor-bottom">
-                <img src="assets/cocktailOne.svg" alt="">
+                <img src="assets/cocktailOne.svg" alt="illustration of cocktail">
             </div>
         </div>
     </header>
@@ -26,11 +26,12 @@
     <section class="questionPage" id="questionPage">
         <h2>HOW <span class="hard">HARD</span> WAS YOUR DAY?</h2>
         <div class="image2">
-            <img src="assets/cocktailTwo.svg" alt="">
+            <img src="assets/cocktailTwo.svg" alt="illustration of cocktail">
         </div>
+        <p class="warning">You must select an option!</p>
         <div class="questionSection">
             <form>
-                <!-- the value "non_alcoholic" is not in camelCase because we will be using that value in our javascript to get to the right API endpoint. Zoe said it was ok :) -->
+                <!-- the value "non_alcoholic" is not in camelCase because we will be using that value in our javascript to get to the right API endpoint. Zoe said it was ok! -->
                 <div class="q1">
                     <input type="radio" id="one" name="selection" value="non_alcoholic">
                     <label for="one">Smooth sailing!</label>
@@ -56,7 +57,7 @@
         <div class="forHeader"></div>
         <div class="resultContainer">
             <div class="image3">
-                <img src="assets/cocktailThree.svg" alt="">
+                <img src="assets/cocktailThree.svg" alt="illustration of cocktail">
             </div>
             <div class="resultText">
                 <div class="resultName"></div>
@@ -64,6 +65,7 @@
                 <ul class="ingredientList"></ul>
             </div>
         </div>
+        <button class="tryAgain">Another Round!</button>
     </section>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
 
